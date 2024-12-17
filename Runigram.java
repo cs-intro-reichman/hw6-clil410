@@ -188,30 +188,13 @@ public class Runigram {
 	 * Before starting the process, scales the target image to the dimensions
 	 * of the source image.
 	 */
-	// public static void morph(Color[][] source, Color[][] target, int n) {
-	// 	int height = target.length;
-	// 	int width = target[0].length;
-	// 	if (height != source.length) {
-	// 		height = source.length;
-	// 	}
-	// 	if (width != source[0].length) {
-	// 		width = source[0].length;
-	// 	}
-	// 	Color[][] targetPic = scaled(target, width, height);
-	// 	for (int i = 0; i < n; i++) {
-	// 		double alpha = (n-i) / n;
-	// 		targetPic= blend(source, targetPic, alpha);
-	// 		display(targetPic);
-	// 		StdDraw.pause(500); 
-	// 	}
-	// }
 
 
 	public static void morph(Color[][] source, Color[][] target, int n) {
 		Color[][] scaledTarget = scaled(target, source[0].length, source.length);
 		for (int i=0; i<n; i++) {
 			display(blend(source, scaledTarget, ((double)i)/n));
-			// StdDraw.pause(500);
+			StdDraw.pause(500);
 		}
 	}
 	
